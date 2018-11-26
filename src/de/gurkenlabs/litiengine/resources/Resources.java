@@ -5,7 +5,6 @@ import java.awt.image.BufferedImage;
 
 import de.gurkenlabs.litiengine.environment.tilemap.IMap;
 import de.gurkenlabs.litiengine.environment.tilemap.xml.Tileset;
-import de.gurkenlabs.litiengine.graphics.Spritesheet;
 import de.gurkenlabs.litiengine.sound.Sound;
 
 /**
@@ -34,7 +33,6 @@ public final class Resources {
   private static Tilesets tilesets = new Tilesets();
   private static Strings strings = new Strings();
   private static Images images = new Images();
-  private static Spritesheets spritesheets = new Spritesheets();
 
   private Resources() {
     throw new UnsupportedOperationException();
@@ -105,16 +103,5 @@ public final class Resources {
    */
   public static Images images() {
     return images;
-  }
-
-  /**
-   * Gets the container that manages <code>Spritesheet</code> resources.
-   * 
-   * @return The Spritesheet resource container.
-   * 
-   * @see Spritesheet
-   */
-  public static Spritesheets spritesheets() {
-    return spritesheets;
   }
 }

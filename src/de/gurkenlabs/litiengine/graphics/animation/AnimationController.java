@@ -15,6 +15,7 @@ import de.gurkenlabs.litiengine.graphics.Spritesheet;
 import de.gurkenlabs.litiengine.resources.Resources;
 import de.gurkenlabs.litiengine.util.ImageProcessing;
 
+// TODO redo custom keyframe durations
 public class AnimationController implements IAnimationController {
   private static final int MAX_IMAGE_EFFECTS = 20;
   private final List<Animation> animations;

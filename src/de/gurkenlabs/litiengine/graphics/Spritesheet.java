@@ -41,12 +41,10 @@ public final class Spritesheet {
 
     this.updateRowsAndCols();
     this.sprites = new BufferedImage[this.getTotalNumberOfSprites()];
-
-    Resources.spritesheets().add(this.name.toLowerCase(), this);
-    Resources.images().addClearedListener(() -> {
-      this.emptySprites.clear();
-      this.sprites = new BufferedImage[this.getTotalNumberOfSprites()];
-    });
+  }
+  
+  public Spritesheet(String path, int spriteWidth, int spriteHeight) {
+    this(Resources.images().get(path), path, spriteWidth, spriteHeight);
   }
 
   /**
@@ -160,10 +158,6 @@ public final class Spritesheet {
    */
   public int getTotalNumberOfSprites() {
     return this.getRows() * this.getColumns();
-  }
-
-  public boolean isLoaded() {
-    return Resources.spritesheets().contains(this);
   }
 
   public void setSpriteHeight(final int spriteHeight) {

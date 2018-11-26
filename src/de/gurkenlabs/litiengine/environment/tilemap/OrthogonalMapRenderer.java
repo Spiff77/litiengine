@@ -251,7 +251,7 @@ public class OrthogonalMapRenderer implements IMapRenderer {
   }
 
   private void renderImageLayer(Graphics2D g, IImageLayer layer, Rectangle2D viewport) {
-    Spritesheet sprite = Resources.spritesheets().get(layer.getImage().getSource());
+    BufferedImage sprite = Resources.images().get(layer.getImage().getAbsoluteSourcePath());
     if (sprite == null) {
       return;
     }
@@ -263,7 +263,7 @@ public class OrthogonalMapRenderer implements IMapRenderer {
     final double viewportOffsetX = -viewport.getX() + layer.getOffset().x;
     final double viewportOffsetY = -viewport.getY() + layer.getOffset().y;
 
-    ImageRenderer.render(g, sprite.getImage(), viewportOffsetX, viewportOffsetY);
+    ImageRenderer.render(g, sprite, viewportOffsetX, viewportOffsetY);
     g.setComposite(oldComp);
   }
 }
